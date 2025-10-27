@@ -4,72 +4,164 @@
   <meta charset="UTF-8">
   <title>Gabriele Santona</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* === Reset & Base === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #1e3c72);
+      background-size: 600% 600%;
+      animation: gradientMove 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    /* === Projects Section === */
+    #projects {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .project h3 {
+      color: #ffcc70;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #ffd166;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #about, #contact {
+      margin-bottom: 3rem;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+
+    /* === Responsive === */
+    @media (min-width: 768px) {
+      #projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Gabriele Santona</h1>
-    <p>Studente universitario, programmo videogiochi nel tempo libero</p>
+    <p>Studente universitario • Sviluppatore di videogiochi</p>
   </header>
+
   <main>
     <section id="projects">
       <h2>Progetti</h2>
 
-      <!-- Progetto 1 -->
       <div class="project">
         <h3>Arise of Cosmos</h3>
-        <p>In questo primo prototipo mi sono occupato principalmente di settare l'animator e i suoi stati per gestire le animazioni del protagonista.
-        Successivamente, mi sono occupato sui nemici, in ogni loro aspetto(ai, animator, attacchi, movimento, zone di spawn).
-        Infine, ho realizzato l'arena finale del gioco.
-        Essendo un team molto ristretto, ho lavorato in generale su tutto il gioco, aiutando dove c'era bisogno.
-        </p>
-        <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/e1gB1m7A0PY"
-                title="Arise of Cosmos" frameborder="0" allowfullscreen></iframe>
-        <p><a href="https://github.com/kevinmascitti/ExHeadStudio-COSMOS/tree/art_enhancement_copy" target="_blank">Vai al repository su GitHub</a></p>
-        <p><a href="https://exheadstudio.itch.io/arise-of-cosmos" target="_blank">Vai alla pagina itch del gioco</a></p>
+        <p>Mi sono occupato della gestione delle animazioni del protagonista e dei nemici, compresi AI, attacchi, spawn e arena finale.</p>
+        <iframe src="https://www.youtube.com/embed/e1gB1m7A0PY" title="Arise of Cosmos" allowfullscreen></iframe>
+        <p><a href="https://github.com/kevinmascitti/ExHeadStudio-COSMOS/tree/art_enhancement_copy" target="_blank">Repository GitHub</a> | 
+           <a href="https://exheadstudio.itch.io/arise-of-cosmos" target="_blank">Pagina Itch.io</a></p>
       </div>
 
-      <!-- Progetto 2 -->
       <div class="project">
         <h3>Battleshift: Marconi</h3>
-        <p>In questo secondo prototipo mi sono occupato principalmente dell'intelligenza artificiale di alleati e avversari, cercando di ottenere un comportamento simile a quello di un alveare.
-        Inoltre, ho lavorato anche sul sistema di coordinamento di movimento tra le varie unità, amiche e nemiche, per ottenere un movimento fluido e senza collisioni o sovrapposizioni.
-        Essendo un team molto ristretto, ho lavorato in generale su tutto il gioco, aiutando dove c'era bisogno, in particolare sulla gestione della UI, degli eventi e della griglia.</p>
-        <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/8cH9GLmu_kY"
-                title="Battelshift Marconi" frameborder="0" allowfullscreen></iframe>
-        <p><a href="https://github.com/Ex-Head-Studio/ExHeadStudio-Marconi/tree/FinalIteration" target="_blank">Vai al repository su GitHub</a></p>
-        <p><a href="https://exheadstudio.itch.io/battleshift-marconi" target="_blank">Vai alla pagina itch del gioco </a></p>
-      </div>
-      <!-- Progetto 3 -->
-      <div class="project">
-        <h3>No Time Left</h3>
-        <p>Nato poche settimane fa per la jam di inizio progettualità. In No Time Left ho lavorato prevalentemente sull'interazione tra personaggio e ambiente. 
-          In particolare, sull'utilizzo delle piattaforme, lo spostamento delle casse e l'interazione con le porte</p>
-        <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/TWTMjLKFUJE"
-                title="No Time Left" frameborder="0" allowfullscreen></iframe>
-                <p><a href="https://ilsanto.itch.io/no-time-left" target="_blank">Vai alla pagina itch del gioco </a></p>
-                <p>Link non  disponibile...</p>
+        <p>Ho sviluppato l'intelligenza artificiale per alleati e nemici, coordinando il movimento fluido delle unità e contribuendo a UI e griglia.</p>
+        <iframe src="https://www.youtube.com/embed/8cH9GLmu_kY" title="Battleshift: Marconi" allowfullscreen></iframe>
+        <p><a href="https://github.com/Ex-Head-Studio/ExHeadStudio-Marconi/tree/FinalIteration" target="_blank">Repository GitHub</a> | 
+           <a href="https://exheadstudio.itch.io/battleshift-marconi" target="_blank">Pagina Itch.io</a></p>
       </div>
 
-      <!-- aggiungi altri progetti -->
+      <div class="project">
+        <h3>No Time Left</h3>
+        <p>Progetto creato per una jam. Mi sono concentrato sull’interazione tra personaggio e ambiente (piattaforme, casse e porte).</p>
+        <iframe src="https://www.youtube.com/embed/TWTMjLKFUJE" title="No Time Left" allowfullscreen></iframe>
+        <p><a href="https://ilsanto.itch.io/no-time-left" target="_blank">Pagina Itch.io</a></p>
+      </div>
     </section>
 
     <section id="about">
       <h2>Chi sono</h2>
-      <p>Mi chiamo Gabriele Santona, sono uno studente di Ingegneria Informatica, specializzazione in AI and Data Analytics al Politecnico di Torino.
-        Da qualche anno ho iniziato a interessarmi allo sviluppo di videogiochi, in particolare alla programmazione. 
-        Grazie al Level Up Lab ho avuto l'opportunità di imparare e lavorare su diversi progetti, primo fra tutti Arise of Cosmos, seguito da Battleshift: Marconi.
-        Attualmente sto lavorando su No Time Left, un platform 2D sviluppato in Unity.
-      </p>
+      <p>Sono uno studente di Ingegneria Informatica al Politecnico di Torino (AI & Data Analytics).  
+        Ho iniziato a programmare videogiochi da alcuni anni e, grazie al Level Up Lab, ho potuto lavorare su diversi progetti come <strong>Arise of Cosmos</strong> e <strong>Battleshift: Marconi</strong>.  
+        Attualmente sto lavorando su <em>No Time Left</em>, un platform 2D in Unity.</p>
     </section>
 
     <section id="contact">
       <h2>Contatti</h2>
-      <p>Email: santonagabriele@example.com</p>
-      <p>Altro link: <a href="https://linkedin.com/in/gabriele-santona-125518300/" target="_blank">LinkedIn</a></p>
+      <p>Email: <a href="mailto:santonagabriele@example.com">santonagabriele@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/gabriele-santona-125518300/" target="_blank">Profilo</a></p>
     </section>
   </main>
 
