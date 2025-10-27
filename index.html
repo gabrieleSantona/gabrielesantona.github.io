@@ -31,15 +31,33 @@
     }
 
     header, footer {
-      text-align: center;
-      padding: 2rem 1rem;
       background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(6px);
     }
 
+    /* Header compatto: titolo e sottotitolo sulla stessa riga quando possibile */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem; /* altezza ridotta */
+    }
+
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.1rem; /* ancora più piccolo */
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; /* tronca se troppo lungo */
+      max-width: 52ch;
+    }
+
+    header p {
+      font-size: 0.8rem;
+      margin: 0;
+      opacity: 0.95;
+      white-space: nowrap;
     }
 
     main {
