@@ -35,29 +35,30 @@
       backdrop-filter: blur(6px);
     }
 
-    /* Header compatto: titolo e sottotitolo sulla stessa riga quando possibile */
+    /* Header compatto: titolo sopra il sottotitolo con meno spazio */
     header {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 0.45rem 1rem; /* altezza ridotta */
+      gap: 0.15rem;           /* meno spazio tra titolo e sottotitolo */
+      padding: 0.25rem 1rem;  /* header più compatto */
     }
 
     header h1 {
-      font-size: 1.1rem; /* ancora più piccolo */
+      font-size: 1.1rem;
       margin: 0;
+      line-height: 1;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis; /* tronca se troppo lungo */
+      text-overflow: ellipsis;
       max-width: 52ch;
     }
 
     header p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       margin: 0;
       opacity: 0.95;
-      white-space: nowrap;
+      line-height: 1;
     }
 
     main {
